@@ -1,0 +1,32 @@
+###########################################################################
+# Copyright 2017 IoT.bzh
+#
+# author: Ronan Le Martret <ronan.lemartret@iot.bzh>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+###########################################################################
+
+# Add target to project dependency list
+PROJECT_TARGET_ADD(helloworld-service-client)
+
+	# Define project Targets
+        add_library(${TARGET_NAME} MODULE ${TARGET_NAME}.cpp)
+
+	# Library dependencies (include updates automatically)
+	TARGET_LINK_LIBRARIES(${TARGET_NAME}
+		${link_libraries}
+	)
+
+	# installation directory
+	INSTALL(TARGETS ${TARGET_NAME}
+		LIBRARY DESTINATION ${BINDINGS_INSTALL_DIR})
