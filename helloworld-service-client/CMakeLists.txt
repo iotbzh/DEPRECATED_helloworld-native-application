@@ -19,14 +19,16 @@
 # Add target to project dependency list
 PROJECT_TARGET_ADD(helloworld-service-client)
 
-	# Define project Targets
-        add_library(${TARGET_NAME} MODULE ${TARGET_NAME}.cpp)
-
-	# Library dependencies (include updates automatically)
-	TARGET_LINK_LIBRARIES(${TARGET_NAME}
-		${link_libraries}
-	)
-
-	# installation directory
-	INSTALL(TARGETS ${TARGET_NAME}
-		LIBRARY DESTINATION ${BINDINGS_INSTALL_DIR})
+# Define project Targets
+ADD_EXECUTABLE(${TARGET_NAME} ${TARGET_NAME}.c)
+SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
+	LABELS "EXECUTABLE"
+	OUTPUT_NAME ${TARGET_NAME}
+)
+# Library dependencies (include updates automatically)
+TARGET_LINK_LIBRARIES(${TARGET_NAME}
+	${link_libraries}
+)
+# installation directory
+INSTALL(TARGETS ${TARGET_NAME}
+	RUNTIME DESTINATION ${BINDINGS_INSTALL_DIR})

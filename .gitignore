@@ -3,3 +3,4 @@ package
 .stfolder
 .*.sw*
 *.tar.gz
+.vscode
