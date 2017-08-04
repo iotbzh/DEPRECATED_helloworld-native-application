@@ -59,9 +59,9 @@ ssh root@${YOUR_BOARD_IP} afm-util ps
 ssh root@${YOUR_BOARD_IP} rm /tmp/helloworld.log
 ```
 
-# Activate security
+# Activate authentification security
 
-The security is active in file **conf.d/wgt/config.xml.in** by:
+The security is actived in file **conf.d/wgt/config.xml.in** by:
 
 ```xml
   <feature name="urn:AGL:widget:required-permission">
@@ -69,7 +69,7 @@ The security is active in file **conf.d/wgt/config.xml.in** by:
   </feature>
 ```
 
-To disabled it 
+To disable security
 
-* remove the feature **urn:AGL:widget:required-permission** from the xml file **conf.d/wgt/config.xml.in**
+* remove the feature section named **urn:AGL:widget:required-permission** from the xml file **conf.d/wgt/config.xml.in**
 * rebuild your application
