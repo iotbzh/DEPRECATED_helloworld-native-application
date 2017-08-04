@@ -17,7 +17,7 @@
 ###########################################################################
 
 # Add target to project dependency list
-PROJECT_TARGET_ADD(helloworld-service-client)
+PROJECT_TARGET_ADD(helloworld-native-application)
 
 # Define project Targets
 ADD_EXECUTABLE(${TARGET_NAME} ${TARGET_NAME}.c)

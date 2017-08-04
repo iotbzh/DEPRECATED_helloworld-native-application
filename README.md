@@ -1,12 +1,12 @@
-# helloworld-service-client
+# helloworld-native-application
 
 A application using binding example for AGL
 
 ## Setup 
 
 ```bash
-git clone --recursive https://github.com/iotbzh/helloworld-service-client.git
-cd helloworld-service-client
+git clone --recursive https://github.com/iotbzh/helloworld-native-application.git
+cd helloworld-native-application
 ```
 
 ## Build  for AGL
@@ -30,7 +30,7 @@ cd helloworld-service-client
 
 ```bash
 export YOUR_BOARD_IP=192.168.1.X
-export APP_NAME=helloworld-service-client
+export APP_NAME=helloworld-native-application
 scp build/${APP_NAME}.wgt root@${YOUR_BOARD_IP}:/tmp
 #install the widget
 ssh root@${YOUR_BOARD_IP} afm-util install /tmp/${APP_NAME}.wgt

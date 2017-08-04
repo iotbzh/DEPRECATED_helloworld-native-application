@@ -18,9 +18,9 @@
 
 # Project Info
 # ------------------
-set(PROJECT_NAME helloworld-service-client)
+set(PROJECT_NAME helloworld-native-application)
 set(PROJECT_VERSION "0.1")
-set(PROJECT_PRETTY_NAME "Helloworld-service-client")
+set(PROJECT_PRETTY_NAME "Helloworld-native-application")
 set(PROJECT_DESCRIPTION "AGL binding helloworld-service client example")
 set(PROJECT_URL "TODO")
 set(PROJECT_ICON "icon.png")
@@ -121,7 +121,7 @@ set(WIDGET_TYPE application/vnd.agl.native)
 # This is the file that will be executed, loaded,
 # at launch time by the application framework.
 #
-set(WIDGET_ENTRY_POINT bin/helloworld-service-client)
+set(WIDGET_ENTRY_POINT bin/helloworld-native-application)
 
 # Optional dependencies order
 # ---------------------------
