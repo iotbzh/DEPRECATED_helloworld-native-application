@@ -81,13 +81,45 @@ set (PKG_REQUIRED_LIST
 
 # Compilation options definition
 # Use CMake generator expressions to specify only for a specific language
-# -----------------------------------------------------------------------
-#add_compile_options()
-
-# Print a helper message when every thing is finished
-# ----------------------------------------------------
-#set(CLOSING_MESSAGE "")
-#set(PACKAGE_MESSAGE "Install widget file using in the target : afm-util install ${PROJECT_NAME}.wgt")
+# Values are prefilled with default options that is currently used.
+# Either separate options with ";", or each options must be quoted separately
+# DO NOT PUT ALL OPTION QUOTED AT ONCE , COMPILATION COULD FAILED !
+# ----------------------------------------------------------------------------
+#set(COMPILE_OPTIONS
+# -Wall
+# -Wextra
+# -Wconversion
+# -Wno-unused-parameter
+# -Wno-sign-compare
+# -Wno-sign-conversion
+# -Werror=maybe-uninitialized
+# -Werror=implicit-function-declaration
+# -ffunction-sections
+# -fdata-sections
+# -fPIC
+# CACHE STRING "Compilation flags")
+#set(C_COMPILE_OPTIONS "" CACHE STRING "Compilation flags for C language.")
+#set(CXX_COMPILE_OPTIONS "" CACHE STRING "Compilation flags for C++ language.")
+#set(PROFILING_COMPILE_OPTIONS
+# -g
+# -O0
+# -pg
+# -Wp,-U_FORTIFY_SOURCE
+# CACHE STRING "Compilation flags for PROFILING build type.")
+#set(DEBUG_COMPILE_OPTIONS
+# -g
+# -ggdb
+# -Wp,-U_FORTIFY_SOURCE
+# CACHE STRING "Compilation flags for DEBUG build type.")
+#set(CCOV_COMPILE_OPTIONS
+# -g
+# -O2
+# --coverage
+# CACHE STRING "Compilation flags for CCOV build type.")
+#set(RELEASE_COMPILE_OPTIONS
+# -g
+# -O2
+# CACHE STRING "Compilation flags for RELEASE build type.")
 
 # (BUG!!!) as PKG_CONFIG_PATH does not work [should be an env variable]
 # ---------------------------------------------------------------------
@@ -150,8 +182,13 @@ set(WIDGET_ENTRY_POINT bin/helloworld-native-application)
 # Optional Application Framework security token
 # and port use for remote debugging.
 #------------------------------------------------------------
-#set(AFB_TOKEN   ""      CACHE PATH "Default AFB_TOKEN")
-#set(AFB_REMPORT "1234" CACHE PATH "Default AFB_TOKEN")
+set(AFB_TOKEN   ""     CACHE PATH "Default binder security token")
+set(AFB_REMPORT "1234" CACHE PATH "Default binder listening port")
+
+# Print a helper message when every thing is finished
+# ----------------------------------------------------
+set(CLOSING_MESSAGE "Typical binding launch: afb-daemon --port=${AFB_REMPORT} --workdir=${CMAKE_BINARY_DIR}/package --ldpaths=lib --roothttp=htdocs  --token=\"${AFB_TOKEN}\" --tracereq=common --verbose")
+set(PACKAGE_MESSAGE "Install widget file using in the target : afm-util install ${PROJECT_NAME}.wgt")
 
 # This include is mandatory and MUST happens at the end
 # of this file, else you expose you to unexpected behavior
