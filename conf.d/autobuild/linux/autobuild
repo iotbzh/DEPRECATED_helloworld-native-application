@@ -55,7 +55,7 @@ package: build
 	@mkdir -p ${BUILD_DIR}/$@/etc
 	@mkdir -p ${BUILD_DIR}/$@/lib
 	@mkdir -p ${BUILD_DIR}/$@/htdocs
-	@mkdir -p ${BUILD_DIR}/$@/data
+	@mkdir -p ${BUILD_DIR}/$@/var
 	@cmake --build ${BUILD_DIR} --target widget
 	@mkdir -p ${DEST} && cp ${BUILD_DIR}/*wgt ${DEST}
 

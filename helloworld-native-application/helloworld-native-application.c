@@ -82,7 +82,7 @@ int main(int ac, char **av, char **env)
 	}
 
 	/*touch the file log file*/
-	int fd = open (logFile, O_RDWR|O_CREAT);
+	int fd = open (logFile, O_RDWR|O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	close(fd);
 
 	/* the request*/
