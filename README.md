@@ -35,7 +35,7 @@ scp build/${APP_NAME}.wgt root@${YOUR_BOARD_IP}:/tmp
 #install the widget
 ssh root@${YOUR_BOARD_IP} afm-util install /tmp/${APP_NAME}.wgt
 APP_VERSION=$(ssh root@${YOUR_BOARD_IP} afm-util list | grep ${APP_NAME}@ | cut -d"\"" -f4| cut -d"@" -f2)
-#start the bender
+#start the binder
 ssh root@${YOUR_BOARD_IP} afm-util start ${APP_NAME}@${APP_VERSION}
 ```
 
@@ -52,10 +52,10 @@ ssh root@${YOUR_BOARD_IP} journalctl -f
 #you can display log from file
 ssh root@${YOUR_BOARD_IP} cat /tmp/helloworld.log
 
-#you can display the bender status
+#you can display the binder status
 ssh root@${YOUR_BOARD_IP} afm-util ps
 
-#you can stop the bender by remove file **helloworld.log**
+#you can stop the binder by remove file **helloworld.log**
 ssh root@${YOUR_BOARD_IP} rm /tmp/helloworld.log
 ```
 
