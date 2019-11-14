@@ -15,13 +15,13 @@ cd helloworld-native-application
 #setup your build environement
 . /xdt/sdk/environment-setup-aarch64-agl-linux
 #build your application
-./conf.d/autobuild/agl/autobuild package
+./autobuild/agl/autobuild package
 ```
 
 ## Build for 'native' Linux distros (Fedora, openSUSE, Debian, Ubuntu, ...)
 
 ```bash
-./conf.d/autobuild/linux/autobuild package
+./autobuild/linux/autobuild package
 ```
 
 ## Deploy

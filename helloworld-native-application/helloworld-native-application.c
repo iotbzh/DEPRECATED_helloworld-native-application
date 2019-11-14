@@ -120,7 +120,7 @@ static void on_reply(void *closure, struct afb_wsj1_msg *msg)
 	/*if log file still exist write json result else exit*/
 	if ( access( logFile, F_OK ) != -1 )
 	{
-		int fd = fopen(logFile, "w");
+		FILE* fd = fopen(logFile, "a");
 		fprintf(fd, result);
 		fclose(fd);
 		/*wait before new call*/
